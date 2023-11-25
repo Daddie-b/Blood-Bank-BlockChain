@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System - Patient Dashboard</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-image: url('imgs/life.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            backdrop-filter: blur(20px);
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #b71c1c;
+            text-transform: uppercase;
+        }
+
+        h2.blood-requests {
+            color: #1a237e;
+        }
+
+        h2.responses {
+            color: #004d40;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #patientActions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+     #patientActions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+        }
+
+        button:hover,
+        button:active {
+            background-color: #a0456f;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Welcome, Patient!</h1>
+    </div>
+
+    <div id="container">
+        <div id="blood-requests-list-for-patient">
+            <h2 class="blood-requests">Blood Requests</h2>
+            <ul id="bloodRequestsListPatient"></ul>
+        </div>
+
+        <div id="patientDashboard">
+            <h2 class="responses">Responses to Blood Donation Requests</h2>
+            <ul></ul>
+        </div>
+    </div>
+
+    <div id="patientActions">
+        <h2>Press the Button to Request Blood</h2>
+        <button onclick="requestBlood()">Request Blood</button>
+    </div>
+
+    <script>
+        // Call the function when the window loads for patient_dashboard
+        window.onload = () => {
+            displayBloodRequests('bloodRequestsListPatient');
+            displayPatientResponses();
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

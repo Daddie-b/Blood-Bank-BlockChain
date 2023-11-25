@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System - Donor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #donorActions {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgb(160, 69, 96);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, Donor!</h1>
+
+    <div id="donorActions">
+        <h2>Donor Actions</h2>
+        <button onclick="donateBlood()">Donate Blood</button>
+    </div>
+    <div id="donationDetails">
+        <h2>Donation Details</h2>
+        <ul id="donationDetailsList"></ul>
+    </div>
+    
+    <div id="donationDetails">
+        <h2>Total Blood Donated</h2>
+        <p id="totalDonated"></p>
+    </div>
+
+    <script>
+        window.onload = function () {
+            // Display stored donation details from local storage
+            displayStoredDonationDetails();
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

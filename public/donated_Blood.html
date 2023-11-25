@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donated Blood Dashboard</title>
+</head>
+<body>
+
+<h1>Donated Blood Dashboard</h1>
+
+<button onclick="fetchBloodData()">Get Blood Data</button>
+
+<div>
+    <h2>Total Blood Donated:</h2>
+    <p id="totalBloodDonated">Click the button to get data</p>
+</div>
+
+<div>
+    <h2>Blood Inventory for Type A:</h2>
+    <p id="bloodInventoryA">Click the button to get data</p>
+</div>
+
+<script>
+    async function fetchBloodData() {
+        try {
+            // Call the smart contract function to get the total amount of blood donated
+            const totalBloodDonated = await bloodBankContract.methods.getTotalBloodDonated().call();
+
+            // Call the smart contract function to get the blood inventory for a specific blood type
+            const bloodInventoryA = await bloodBankContract.methods.getBloodInventory(0).call(); // Assuming 0 represents BloodType A
+
+            // Update the displayed values
+            document.getElementById('totalBloodDonated').textContent = totalBloodDonated;
+            document.getElementById('bloodInventoryA').textContent = bloodInventoryA;
+        } catch (error) {
+            console.error('Error fetching blood data:', error.message);
+        }
+    }
+</script>
+<script src="app.js"></script>
+</body>
+</html>

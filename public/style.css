@@ -1,0 +1,59 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#loginSection, #adminSection, #userSection {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#registerDonorBtn, #registerPatientBtn, #donateBloodBtn, #locateHospitalBtn, #requestBloodBtn {
+    background-color: #007BFF;
+}
+
+#registerDonorBtn:hover, #registerPatientBtn:hover, #donateBloodBtn:hover, #locateHospitalBtn:hover, #requestBloodBtn:hover {
+    background-color: #0056b3;
+}
+
+#adminSection, #userSection {
+    display: none;
+}

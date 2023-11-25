@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System - Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 2.5em; /* Increase font size for emphasis */
+            margin-bottom: 20px; /* Add more space below the heading for clarity */
+            padding: 10px; /* Add padding for better readability */
+        }
+
+        p {
+            color: #ecf0f1; /* Slightly different color for variety */
+            font-size: 1.2em; /* Increase font size for emphasis */
+            margin-bottom: 20px; /* Add space below the paragraph */
+            padding: 10px; /* Add padding for better readability */
+        }
+
+        #adminMessages,
+        #registeredUsers,
+        #BloodRequestsListForAdmin,
+        div {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgb(241, 189, 189);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(43, 42, 42, 0.1);
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #fb2111;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+        #donorsList img {
+            max-width: 100px; /* Adjust the maximum width as needed */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        #registeredUsers {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #donorsList {
+            flex: 1;
+            margin-right: 20px; /* Adjust margin as needed for spacing between columns */
+            background-color: #f3f2f2;
+        }
+
+        #donorsList img {
+            max-width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        #patientsList {
+            flex: 1;
+            color: #1f6fa5;
+            background-color: azure;
+        }
+        h3 {
+            color: rgb(120, 154, 250); /* Text color for the column headings */
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <p>Welcome, Admin!</p>
+
+    <div id="adminMessages">
+        <h2>Admin Messages</h2>
+        <ul id="adminMessageList"></ul>
+    </div>
+
+    <div id="registeredUsers">
+        <h2>Registered Users</h2>
+            <div id="donorsList">
+            <h3>Registered Donors</h3>
+            <img src="imgs/registered.jpg" alt="Donor Image">
+            <ul id="donorsDetailsList"></ul>
+        </div>
+        <div id="patientsList">
+            <h3>Registered Patients</h3>
+            
+            <ul id="patientsDetailsList"></ul>
+        </div>
+    </div>
+
+    <div id="BloodRequestsListForAdmin">
+        <h3>Blood Requests Made By Patients</h3>
+        <ul id="bloodRequestsListAdmin"></ul>
+    </div>
+    
+    <div>
+        <h2>Admin Actions</h2>
+        <button onclick="respondToRequest()">Respond to Requests</button>
+        <button onclick="grantUserPermission()">Grant User Permission</button>
+    </div>
+
+    <script>
+        // Call the function when the window loads for patient_dashboard
+        window.onload = () => {
+            displayBloodRequests('bloodRequestsListAdmin');
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

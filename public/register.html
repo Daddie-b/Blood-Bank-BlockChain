@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System - User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form id="userRegistrationForm">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" required>
+
+        <label for="userType">User Type:</label>
+        <select id="userType" required>
+            <option value="Donor">Donor</option>
+            <option value="Patient">Patient</option>
+        </select>
+
+        <label for="bloodType">Blood Type:</label>
+        <select id="bloodType" required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="AB">AB</option>
+            <option value="O">O</option>
+        </select>
+
+        <!-- Separate buttons for donor and patient registration -->
+        <button type="button" onclick="registerDonor()">Register as Donor</button>
+        <button type="button" onclick="registerPatient()">Register as Patient</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
